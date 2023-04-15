@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "created": {
+      "type": "datetime",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "order_content": {
+      "type": "json"
+    },
+    "order_value": {
+      "type": "decimal"
+    },
+    "payment_ID": {
+      "type": "biginteger"
+    },
+    "shipped": {
+      "type": "boolean",
+      "default": false
+    },
+    "tracking_number": {
+      "type": "string"
+    }
+  }
+}
